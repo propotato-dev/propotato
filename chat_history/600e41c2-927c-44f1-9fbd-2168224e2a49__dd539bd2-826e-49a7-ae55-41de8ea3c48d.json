@@ -1,0 +1,29 @@
+[
+    {
+        "role": "user",
+        "content": "give a riddle",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Here’s a classic brain‑teaser for you:\n\n**I speak without a mouth and hear without ears. I have nobody — but I come alive with wind. What am I?**\n\nTake a guess, and when you’re ready I’ll let you know the answer!"
+    },
+    {
+        "role": "user",
+        "content": "umm echo?",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "You got it—**echo** is the answer!  \n\nAn echo “speaks” when sound bounces back, it “hears” the original noise, it has no physical form, and it’s set in motion by the “wind” of air that carries the sound waves.\n\nWould you like another riddle, or is there something else you’re curious about?"
+    },
+    {
+        "role": "user",
+        "content": "gg",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Glad you enjoyed it! 🎉 If you ever want more riddles, puzzles, or anything else, just drop by. Have a great day!"
+    }
+]

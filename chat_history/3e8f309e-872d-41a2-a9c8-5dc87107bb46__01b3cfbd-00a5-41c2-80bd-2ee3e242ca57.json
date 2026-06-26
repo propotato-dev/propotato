@@ -1,0 +1,29 @@
+[
+    {
+        "role": "user",
+        "content": "Hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey there! 👋  \nHow can I help you today?"
+    },
+    {
+        "role": "user",
+        "content": "So you are new ai in market",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Exactly! I’m a fresh‑off‑the‑press AI ready to help with anything you need—whether that’s answering questions, brainstorming ideas, writing, coding, or just chatting. What can I do for you today?"
+    },
+    {
+        "role": "user",
+        "content": "Summarise  (a+b)²",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "**Summary of \\((a+b)^2\\)**  \n\n\\[\n(a+b)^2 = (a+b)\\times(a+b)\n\\]\n\nWhen you multiply the two binomials, apply the distributive (FOIL) method:\n\n| Step | Calculation |\n|------|--------------|\n| **First** | \\(a \\times a = a^2\\) |\n| **Outer** | \\(a \\times b = ab\\) |\n| **Inner** | \\(b \\times a = ab\\) |\n| **Last**  | \\(b \\times b = b^2\\) |\n\nCombine the terms:\n\n\\[\na^2 + ab + ab + b^2 = a^2 + 2ab + b^2\n\\]\n\n---\n\n### Quick take‑away\n\\[\n\\boxed{(a+b)^2 = a^2 + 2ab + b^2}\n\\]\n\nThis is the standard expansion of the square of a sum."
+    }
+]

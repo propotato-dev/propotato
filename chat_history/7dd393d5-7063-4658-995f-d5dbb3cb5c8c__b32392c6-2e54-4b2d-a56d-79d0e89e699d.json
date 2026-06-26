@@ -1,0 +1,20 @@
+[
+    {
+        "role": "user",
+        "content": "hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey there! 👋 How can I help you today?"
+    },
+    {
+        "role": "user",
+        "content": "what is meaning of  zombie in  40 words",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "**Zombie:** a reanimated corpse, typically depicted in folklore and modern media as a mindless, flesh‑eating being driven by a primal urge to spread infection, lacking consciousness, emotions, or free will, often symbolizing societal fears of conformity and loss of autonomy."
+    }
+]

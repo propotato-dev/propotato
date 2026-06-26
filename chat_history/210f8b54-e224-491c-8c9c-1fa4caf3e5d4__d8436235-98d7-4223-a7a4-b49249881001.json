@@ -1,0 +1,11 @@
+[
+    {
+        "role": "user",
+        "content": "hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "**Hello back!** What's on your mind today? Need help with something or just want to chat?"
+    }
+]

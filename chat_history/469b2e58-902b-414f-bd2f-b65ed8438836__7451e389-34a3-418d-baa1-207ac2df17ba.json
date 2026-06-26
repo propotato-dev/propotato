@@ -1,0 +1,20 @@
+[
+    {
+        "role": "user",
+        "content": "Hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey there! 👋 I’m ProPotato – ready to mash through any question you’ve got. How can I help you today?"
+    },
+    {
+        "role": "user",
+        "content": "Hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey again! 👋 What’s on your mind today? Feel free to ask anything—whether it’s a quick fact, a deep dive, or just a chat."
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "role": "user",
+        "content": "hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey there! 👋 How can I help you today?"
+    },
+    {
+        "role": "user",
+        "content": "Hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey! 👋 What’s on your mind today?"
+    },
+    {
+        "role": "user",
+        "content": "Hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Hey again! 👋 Anything I can help you with today?"
+    },
+    {
+        "role": "user",
+        "content": "Well bye I got a work",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "Got it! Good luck with your work. If you need anything later, just drop by. Have a great day!"
+    }
+]

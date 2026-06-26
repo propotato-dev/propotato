@@ -1,0 +1,11 @@
+[
+    {
+        "role": "user",
+        "content": "hi",
+        "has_image": false
+    },
+    {
+        "role": "assistant",
+        "content": "\n\n[ProPotato Error: The AI service failed. Please check the model/API key in CMD and try again.]"
+    }
+]

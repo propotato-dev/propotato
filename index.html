@@ -1,0 +1,53 @@
+async function handleSend(){
+ if(isGenerating){abortCtrl?.abort();return;}
+ const ta=document.getElementById('ta');
+ const text=ta.value.trim();if(!text)return;
+ ta.value='';ta.style.height='auto';
+ const btn=document.getElementById('sendBtn');
+ btn.textContent='■';btn.classList.add('stop');btn.disabled=false;
+ isGenerating=true;
+ if(!currentId){newChat();}
+ const id=currentId;
+ chats[id].messages.push({role:'user',content:text});
+ chats[id].messages.push({role:'assistant',content:'__thinking__'});
+ if(chats[id].title==='New Chat'&&chats[id].messages.length===2){
+ chats[id].title=text.slice(0,40)+(text.length>40?'...':'');
+ }
+ renderMessages();renderChatList();
+ const apiKey=settings.apiKey;
+ if(!apiKey){
+ chats[id].messages[chats[id].messages.length-1]={role:'assistant',content:'⚠️ No Groq API key set. Open Settings and add your key from console.groq.com/keys'};
+ finish(id);return;
+ }
+ const sysMsg=buildSystem();
+ const history=chats[id].messages.slice(0,-1).map(m=>({role:m.role,content:m.content}));
+ abortCtrl=new AbortController();
+ try{
+ const resp=await fetch('/chat',{
+ method:'POST',
+ headers:{'Content-Type':'application/json'},
+ body:JSON.stringify({message:text,chat_id:id}),
+ signal:abortCtrl.signal
+ });
+ if(!resp.ok){const e=await resp.json().catch(()=>({}));throw new Error(e.error?.message||'API error '+resp.status);}
+ const reader=resp.body.getReader();const dec=new TextDecoder();
+ let acc='';
+ while(true){
+ const{value,done}=await reader.read();if(done)break;
+ const chunk=dec.decode(value);
+ for(const line of chunk.split('\n')){
+ if(!line.startsWith('data:'))continue;
+ const data=line.slice(5).trim();if(data==='[DONE]')break;
+ try{const j=JSON.parse(data);const delta=j.choices?.[0]?.delta?.content;if(delta){acc+=delta;chats[id].messages[chats[id].messages.length-1]={role:'assistant',content:acc};renderMessages();}}catch(e){}
+ }
+ }
+ }catch(e){
+ if(e.name!=='AbortError'){
+ chats[id].messages[chats[id].messages.length-1]={role:'assistant',content:`[Error: ${e.message}]`};
+ } else {
+ const last=chats[id].messages[chats[id].messages.length-1];
+ if(last.content==='__thinking__')chats[id].messages[chats[id].messages.length-1]={role:'assistant',content:'Stopped.'};
+ }
+ }
+ finish(id);
+}
