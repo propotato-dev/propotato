@@ -877,6 +877,14 @@ if __name__ == "__main__":
     print(f"  Memory DB    : {MEMORY_DB}")
     print(f"  Chat Store   : {STORAGE_DIR}/")
     print(f"  Rate Limit   : {RATE_LIMIT_MAX_REQUESTS} req / {RATE_LIMIT_WINDOW_SECONDS}s per IP")
-    print(f"  Running at   : http://localhost:5000")
+
+    port = int(os.environ.get("PORT", 8080))
+
+    print(f"  Running on   : 0.0.0.0:{port}")
     print("=" * 50)
-    app.run(host="0.0.0.0", port=5000, debug=False)
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )
